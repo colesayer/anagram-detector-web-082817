@@ -9,12 +9,13 @@ class Anagram
 
   def match(matches)
     matches.select do |match|
-      match.split("").sort == word_to_letters
+      letters_from_word(match) == letters_from_word(@word)
     end
   end
 
-  def word_to_letters
-    @word.split("").sort
+  def letters_from_word(entry)
+    entry.split("").sort
   end
+
 
 end
